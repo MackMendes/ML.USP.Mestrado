@@ -8,19 +8,20 @@ namespace ML.USP.PriAtividade
 {
     public sealed class Levenberg
     {
-        public decimal[] CalculaGradienteConjugado(decimal x0, decimal x1, out string printResult)
+        private readonly decimal[,] gradienteR = { { 4, 0 }, { 0, 4 } };
+
+        public decimal[] CalculaLevenberg(decimal x0, decimal x1, out string printResult)
         {
             StringBuilder sb = new StringBuilder();
             int k = 0;
-            // Hessiana calculada na mão
-            decimal[,] hessiana = { { 4, 0 }, 
-                                    { 0, 4 } };
+         
             decimal norma = 0;
+            decimal[,] hessiana;
 
             do
             {
-                var hessianaT = Transposto(hessiana);
-
+                var gradienteRTransp = Transposto(gradienteR);
+                hessiana = Hessiana();
 
 
 
@@ -29,6 +30,23 @@ namespace ML.USP.PriAtividade
 
             printResult = sb.ToString();
             return new decimal[] { Math.Round(x0, 2), Math.Round(x1, 2) };
+        }
+
+        private decimal[,] Hessiana()
+        {
+            var gradienteRTransp = Transposto(gradienteR);
+            var gradienteRJob = gradienteR;
+
+            return MultiMatriz (gradienteRJob, gradienteRJob);
+        }
+
+        private decimal[,] MultiMatriz(decimal[,] matriz1, decimal[,] matriz2)
+        {
+            decimal[,] multi = { { matriz1[0, 0] * matriz2[0, 0], matriz1[0, 1] * matriz2[0, 1] },
+                                    { matriz1[1, 0] * matriz2[1, 0], matriz1[1, 1] * matriz2[1, 1] }
+            };
+
+            return multi;
         }
 
         private decimal[,] Transposto(decimal[,] matriz)

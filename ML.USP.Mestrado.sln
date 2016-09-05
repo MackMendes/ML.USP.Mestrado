@@ -5,11 +5,13 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML.USP.PriAtividade", "src\ML.USP.PriAtividade\ML.USP.PriAtividade.csproj", "{64FDD30F-0C66-412B-97DE-BE6F5892D0A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML.USP.PriAtividade.Test", "test\ML.USP.PriAtividade.Test\ML.USP.PriAtividade.Test.csproj", "{91B3F8F4-12B5-407F-A744-87DBDEF6307C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML.USP.Atividades.Test", "test\ML.USP.PriAtividade.Test\ML.USP.Atividades.Test.csproj", "{91B3F8F4-12B5-407F-A744-87DBDEF6307C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{A1D2C3A6-9781-451B-92D4-B4AF2DDE42C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML.USP.View.ConsoleApp", "src\ML.USP.View.Console\ML.USP.View.ConsoleApp.csproj", "{A5D0E1FA-C57E-4EE7-AB9D-CBF014F381BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B98D535C-B454-4EE4-9BAC-C57638FADA88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{91B3F8F4-12B5-407F-A744-87DBDEF6307C} = {B98D535C-B454-4EE4-9BAC-C57638FADA88}
 		{A5D0E1FA-C57E-4EE7-AB9D-CBF014F381BE} = {A1D2C3A6-9781-451B-92D4-B4AF2DDE42C3}
 	EndGlobalSection
 EndGlobal
