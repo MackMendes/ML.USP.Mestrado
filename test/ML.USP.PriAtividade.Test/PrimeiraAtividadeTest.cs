@@ -28,7 +28,7 @@ namespace ML.USP.PriAtividade.Test
             //Random randNum = new Random(); (double)randNum.Next(0, 100), (double)randNum.Next(0, 100)
             var resultado = gradConjugado.CalculaGradienteConjugado(0, 0, out resultCalc);
 
-            // Valores para convergi (resultado esperado)
+            // Valores para convergi (resultado esperado) 
             Assert.AreEqual(2, resultado[0]); // x0 = 2
             Assert.AreEqual(3, resultado[1]); // x1 = 3
         }
